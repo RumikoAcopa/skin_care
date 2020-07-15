@@ -6,3 +6,4 @@
 /pkg/
 /spec/reports/
 /tmp/
+#lib/skin_care/api.rb
