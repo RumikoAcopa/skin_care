@@ -1,4 +1,5 @@
 require "pry"
+require "colorize"
 module SkinCare
 
     class CLI 
@@ -8,8 +9,7 @@ module SkinCare
         end
 
         def start
-
-            puts "Hey There! Ready to get your Skin Fit On?!"
+            puts "Hey There! Ready to get your Skin Fit On?!".colorize(:blue)
             user_location
             list_skin_businesses
             ask_for_choice
@@ -23,14 +23,14 @@ module SkinCare
                 elsif valid?
                     puts SkinCareBusiness.find_by_number(@input).details
                 else
-                    puts "OOOh Snap! I didn't get that.  Try again?"
+                    puts "OOOh Snap! I didn't get that. Try again?"
                 end
                 ask_for_choice
             end
         end
 
         def user_location
-            puts "Let's start looking for your Skin Guru!, where are you?"
+            puts "Let's start looking for your Skin Guru!, where are you?".colorize(:blue)
             @location = gets.chomp
             SkinCareBusiness.load_by_location(@location)
         end

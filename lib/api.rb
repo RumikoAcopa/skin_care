@@ -20,7 +20,7 @@ module SkinCare
         Once you are done, come back and paste your key in here:"
         @@key = gets.strip 
         return if @@key == "exit"
-        
+
         File.open(File.expand_path("~/.yelp-key"), "w") do |file| 
           file.print @@key 
         end 
@@ -38,7 +38,6 @@ module SkinCare
       response = HTTP.auth("Bearer #{api_key}").get(url, params: params)
       response.parse["businesses"] # JSON.parse(response)["businesses"]
     end
-
   end 
 
 end
