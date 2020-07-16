@@ -36,13 +36,13 @@ module SkinCare
 
       def details
          <<-HEREDOC
-         #{self.name.colorize(:yellow)} 
-         Phone number: #{self.phone.colorize(:blue)}
-         Location: #{self.location["address1"].colorize(:blue)}
-         #{self.location["city"].colorize(:blue)} #{self.location["state"].colorize(:blue)} #{self.location["zip_code"].colorize(:blue)}
-         Rating: #{self.rating}
-         Price: #{self.price.colorize(:yellow)}
-         Website: #{self.url.colorize(:blue)}
+         #{self.name.colorize(:blue)} has a rating of #{self.rating}
+
+         Phone number: #{self.phone}
+         Location: #{self.location["address1"]}
+                   #{self.location["city"]} #{self.location["state"]} #{self.location["zip_code"]}
+         Price:    #{self.price}
+         Website:  #{self.url.colorize(:blue)}
          
          HEREDOC
       end 
